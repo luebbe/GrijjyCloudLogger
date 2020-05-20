@@ -128,7 +128,7 @@ begin
   EditService.Text := FSettings.Service;
 
   { Enable all log levels }
-  GrijjyLog.SetLogLevel(TgoLogLevel.Info);
+  GrijjyLog.SetLogLevel(Low(TgoLogLevel));
 
   { Subscribe to the Live Watches message to provide the Grijjy Log Viewer with
     a list of watches.

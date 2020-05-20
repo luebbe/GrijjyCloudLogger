@@ -80,7 +80,7 @@ begin
   FObjects := TObjectList<TObject>.Create;
 
   { Enable all log levels }
-  GrijjyLog.SetLogLevel(TgoLogLevel.Info);
+  GrijjyLog.SetLogLevel(Low(TgoLogLevel));
 
   { Subscribe to the Live Watches message to provide the Grijjy Log Viewer with
     a list of watches.
@@ -222,7 +222,7 @@ begin
   WriteLn('Logging 10,000 messages...');
 
   for I := 0 to 9999 do
-    GrijjyLog.Send('Message ' + I.ToString, TgoLogLevel(I mod 3));
+    GrijjyLog.Send('Message ' + I.ToString, TgoLogLevel(I mod (Integer(High(TgoLogLevel)) + 1)));
 
   WriteLn('Finished logging messages.');
 end;

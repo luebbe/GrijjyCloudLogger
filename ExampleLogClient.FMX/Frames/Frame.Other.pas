@@ -38,7 +38,7 @@ var
   I: Integer;
 begin
   for I := 0 to 9999 do
-    GrijjyLog.Send('Message ' + I.ToString, TgoLogLevel(I mod 3));
+    GrijjyLog.Send('Message ' + I.ToString, TgoLogLevel(I mod (Integer(High(TgoLogLevel)) + 1)));
 end;
 
 end.
